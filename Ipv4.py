@@ -1,5 +1,5 @@
 # Valid-IP-checker-
-This program check whether a given IP is valid or not IPV4
+#This program check whether a given IP is valid or not IPV4
 def ip_checkv4(ip):
 	parts=ip.split(".")
 	if len(parts)<4 or len(parts)>4:
