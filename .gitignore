@@ -1,54 +1,27 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.cache
-nosetests.xml
-coverage.xml
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
+def ip_checkv4(ip):
+	parts=ip.split(".")
+	if len(parts)<4 or len(parts)>4:
+		return "invalid IP length should be 4 not greater or less than 4"
+	else:
+		while len(parts)== 4:
+			a=int(parts[0])
+			b=int(parts[1])
+			c=int(parts[2])
+			d=int(parts[3])
+			if a<= 0 or a == 127 :
+				return "invalid IP address"
+			elif d == 0:
+				return "host id  should not be 0 or less than zero " 
+			elif a>=255:
+				return "should not be 255 or greater than 255 or less than 0 A"
+			elif b>=255 or b<0:	
+				return "should not be 255 or greater than 255 or less than 0 B"
+			elif c>=255 or c<0:
+				return "should not be 255 or greater than 255 or less than 0 C"
+			elif d>=255 or c<0:
+				return "should not be 255 or greater than 255 or less than 0 D"
+			else:
+				return "Valid IP address ", ip
+	
+p=raw_input("Enter IP address")
+print ip_checkv4(p)
